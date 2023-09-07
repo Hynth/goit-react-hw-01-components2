@@ -5,14 +5,16 @@ import styled from 'styled-components';
 
 
 export default function FriendListItem({avatar, name, isOnline}) {
-    const span = styled.span<{ $isOnline: Boolean }>`
+    const Span = styled.span`
     background: ${prop => prop.$isOnline? "green": "red"};
     width: 20px;
+    height: 20px;
     border-radius: 50%;
+    margin-left: 10px;
     `;
     return (
     <li className='friends__item'>
-        <span className='status' $isOnline={isOnline}></span>
+        <Span className='status' $isOnline={isOnline}/>
         <img className='friends__avatar' src={avatar} alt="avatar"/>
         <p className='name'>{name}</p>
     </li>
